@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="HD.js"></script>
+</head>
+<body>
+    <script>
+        let p = new HD((resolve,reject) => {
+          // resolve('解决')
+            reject('拒绝')
+        }).then(
+        value=> {
+            console.log(value) 
+        },
+        reason => {
+            console.log(reason);
+            return "p2";
+        }).then(
+        value=> {
+            console.log("success:" + value) 
+        },
+        reason => {
+            console.log(reason)
+        }    
+        )
+        console.log('hello')
+    </script>
+</body>
+</html>

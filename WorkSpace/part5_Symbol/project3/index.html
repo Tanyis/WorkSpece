@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Cache {
+            static data = {};
+            static set(name,value) {
+                return (this.data[name] = value)
+            }
+            static get(name) {
+                return this.data[name]
+            }
+        }
+
+        let user = { 
+            name: 'app',
+            key: Symbol('购物车数据'),
+            desc: '购物车'
+        }
+
+        let cart = {
+            name: 'app',
+            key: Symbol('会员资料'),
+            desc: '会员资料'
+        }
+        Cache.set(user.key, user);
+        Cache.set(cart.key, cart);
+        
+
+    </script>
+</body>
+</html>
